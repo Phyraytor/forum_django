@@ -1,0 +1,559 @@
+<html>
+<head>
+<!-- revisium.com/ai/ -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<META NAME="ROBOTS" CONTENT="NOINDEX,NOFOLLOW">
+<title>Отчет по /var/www/www-root/data/www/sadtut.by</title>
+<style type="text/css" title="currentStyle">
+	@import "https://cdn.revisium.com/ai/media/css/demo_page2.css";
+	@import "https://cdn.revisium.com/ai/media/css/jquery.dataTables2.css";
+</style>
+
+<script type="text/javascript" language="javascript" src="https://cdn.revisium.com/ai/jquery.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.revisium.com/ai/datatables.min.js"></script>
+
+<style type="text/css">
+ body 
+ {
+   font-family: Tahoma;
+   color: #5a5a5a;
+   background: #FFFFFF;
+   font-size: 14px;
+   margin: 20px;
+   padding: 0;
+ }
+
+.header
+ {
+   font-size: 34px;
+   margin: 0 0 10px 0;
+ }
+
+ .hidd
+ {
+    display: none;
+ }
+ 
+ .ok
+ {
+    color: green;
+ }
+ 
+ .line_no
+ {
+   -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+   border-radius: 4px;
+
+   background: #DAF2C1;
+   padding: 2px 5px 2px 5px;
+   margin: 0 5px 0 5px;
+ }
+ 
+ .credits_header 
+ {
+  -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+   border-radius: 4px;
+
+   background: #F2F2F2;
+   padding: 10px;
+   font-size: 11px;
+    margin: 0 0 10px 0;
+ }
+ 
+ .marker
+ {
+    color: #FF0090;
+	font-weight: 100;
+	background: #FF0090;
+	padding: 2px 0px 2px 0px;
+	width: 2px;
+ }
+ 
+ .title
+ {
+   font-size: 24px;
+   margin: 20px 0 10px 0;
+   color: #9CA9D1;
+}
+
+.summary 
+{
+  float: left;
+  width: 500px;
+}
+
+.summary TD
+{
+  font-size: 12px;
+  border-bottom: 1px solid #F0F0F0;
+  font-weight: 700;
+  padding: 10px 0 10px 0;
+}
+ 
+.crit, .vir
+{
+  color: #D84B55;
+}
+
+.intitem
+{
+  color:#4a6975;
+}
+
+.spacer
+{
+   margin: 0 0 50px 0;
+   clear:both;
+}
+
+.warn
+{
+  color: #F6B700;
+}
+
+.clear
+{
+   clear: both;
+}
+
+.offer
+{
+  -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+   border-radius: 4px;
+
+   width: 500px;
+   background: #F2F2F2;
+   color: #747474;
+   font-family: Helvetica, Arial;
+   padding: 30px;
+   margin: 20px 0 0 550px;
+   font-size: 14px;
+}
+
+.offer2
+{
+  -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+   border-radius: 4px;
+
+   width: 500px;
+   background: #f6f5e0;
+   color: #747474;
+   font-family: Helvetica, Arial;
+   padding: 30px;
+   margin: 20px 0 0 550px;
+   font-size: 14px;
+}
+
+
+HR {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  opacity: .2;
+}
+ 
+.flist
+{
+   font-family: Henvetica, Arial;
+}
+
+.flist TD
+{
+   font-size: 11px;
+   padding: 5px;
+}
+
+.flist TH
+{
+   font-size: 12px;
+   height: 30px;
+   padding: 5px;
+   background: #CEE9EF;
+}
+
+
+.it
+{
+   font-size: 14px;
+   font-weight: 100;
+   margin-top: 10px;
+}
+
+.crit .it A {
+   color: #E50931; 
+   line-height: 25px;
+   text-decoration: none;
+}
+
+.warn .it A {
+   color: #F2C900; 
+   line-height: 25px;
+   text-decoration: none;
+}
+
+
+
+.details
+{
+   font-family: Calibri;
+   font-size: 12px;
+   margin: 10px 10px 10px 0px;
+}
+
+.crit .details
+{
+   color: #A08080;
+}
+
+.warn .details
+{
+   color: #808080;
+}
+
+.details A
+{
+  color: #FFF;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 2px;
+  background: #E5CEDE;
+  -webkit-border-radius: 7px;
+   -moz-border-radius: 7px;
+   border-radius: 7px;
+}
+
+.details A:hover
+{
+   background: #A0909B;
+}
+
+.ctd
+{
+   margin: 10px 0px 10px 0;
+   align:center;
+}
+
+.ctd A 
+{
+   color: #0D9922;
+}
+
+.disclaimer
+{
+   color: darkgreen;
+   margin: 10px 10px 10px 0;
+}
+
+.note_vir
+{
+   margin: 10px 0 10px 0;
+   //padding: 10px;
+   color: #FF4F4F;
+   font-size: 15px;
+   font-weight: 700;
+   clear:both;
+  
+}
+
+.note_warn
+{
+   margin: 10px 0 10px 0;
+   color: #F6B700;
+   font-size: 15px;
+   font-weight: 700;
+   clear:both;
+}
+
+.note_int
+{
+   margin: 10px 0 10px 0;
+   color: #60b5d6;
+   font-size: 15px;
+   font-weight: 700;
+   clear:both;
+}
+
+.updateinfo
+{
+  color: #FFF;
+  text-decoration: none;
+  background: #E5CEDE;
+  -webkit-border-radius: 7px;
+   -moz-border-radius: 7px;
+   border-radius: 7px;
+
+  margin: 10px 0 10px 0px;   
+  padding: 10px;
+}
+
+
+.caution
+{
+  color: #EF7B75;
+  text-decoration: none;
+  margin: 20px 0 0px 0px;   
+  font-size: 12px;
+}
+
+.footer
+{
+  color: #303030;
+  text-decoration: none;
+  background: #F4F4F4;
+  -webkit-border-radius: 7px;
+   -moz-border-radius: 7px;
+   border-radius: 7px;
+
+  margin: 80px 0 10px 0px;   
+  padding: 10px;
+}
+
+.rep
+{
+  color: #303030;
+  text-decoration: none;
+  background: #94DDDB;
+  -webkit-border-radius: 7px;
+   -moz-border-radius: 7px;
+   border-radius: 7px;
+
+  margin: 10px 0 10px 0px;   
+  padding: 10px;
+  font-size: 12px;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="header">Отчет сканера <a href="https://revisium.com/ai/">AI-Bolit</a> v20180912: /var/www/www-root/data/www/sadtut.by/ (2/1)</div>
+<div class="credits_header">Сканер бесплатный только для личного некоммерческого использования. Информация по <a href="https://revisium.com/ai/faq.php#faq11" target=_blank>коммерческой лицензии</a> (пункт №11). <a href="https://revisium.com/images/mini_aibolit.jpg">Авторское свидетельство</a> о гос. регистрации в РосПатенте №2012619254 от 12 октября 2012 г.</div>
+<div class="details_header">
+   Затрачено времени: <b>5 m </b>. Сканирование начато 17-09-2018 в 05:07:38, сканирование завершено 17-09-2018 в 05:12:54<br/>
+   Всего проверено 290 директорий и 2869 файлов. Использовано памяти при сканировании: 29.12 Mb.
+ </div>
+
+ 
+ 
+ <div class="summary">
+<div class="title">Сводный отчет</div><table cellspacing=0 border=0><tr><td class="crit" width=400>Вредоносных скриптов</td><td class="crit">5</td></tr><tr><td class="crit" width=400>JS Вирусов</td><td class="crit">2</td></tr></table><!--[json]{"redirect":0,"critical_php":5,"critical_js":2,"phishing":0,"unix_exec":0,"iframes":0,"not_read":0,"base64":0,"heuristics":0,"symlinks":0,"big_files_skipped":0}[/json]--><div class=details style="margin: 20px 20px 20px 0">Обращаем внимание, что обнаруженные файлы не всегда являются вирусами и хакерскими скриптами. Сканер минимизирует число ложных обнаружений, но это не всегда возможно, так как найденный фрагмент может встречаться как во вредоносных скриптах, так и в обычных.<p>Для диагностического сканирования без ложных срабатываний мы разработали специальную версию <u><a href="https://revisium.com/ru/blog/ai-bolit-4-ISP.html" target=_blank style="background: none; color: #303030">сканера для хостинг-компаний</a></u>.</div>
+
+ </div>
+ 
+ <div class="offer">
+    <div>
+	 <div class="crit" style="font-size: 17px; margin-bottom: 20px"><b>Внимание! Наш сканер обнаружил подозрительный или вредоносный код</b>.</div> 
+	 <p>Возможно, ваш сайт был взломан. Рекомендуем срочно <a href="https://revisium.com/ru/order/#fform" target=_blank>проконсультироваться со специалистами</a> по данному отчету.</p>
+	 <p><hr size=1></p>
+	 <p>Рекомендуем также проверить сайт бесплатным <b><a href="https://rescan.pro/?utm=aibolit" target=_blank>онлайн-сканером ReScan.Pro</a></b>.</p>
+	 <p><hr size=1></p>
+         <div class="caution">Не оставляйте файл отчета на сервере, и не давайте на него прямых ссылок с других сайтов. Информация из отчета может быть использована злоумышленниками для взлома сайта, так как содержит информацию о настройках сервера, файлах и каталогах.</div>
+    </div>
+ </div>
+
+ <div class="offer2">
+	   <b>Наши продукты:</b><br/>
+              <ul>
+               <li style="margin-top: 10px"><font color=red><sup>[new]</sup></font><b><a href="https://revisium.com/ru/products/antivirus_for_ispmanager/" target=_blank>Антивирус для ISPmanager Lite</a></b> &mdash;  сканирование и лечение сайтов прямо в панели хостинга</li>
+               <li style="margin-top: 10px"><b><a href="https://revisium.com/ru/blog/revisium-antivirus-for-plesk.html" target=_blank>Антивирус для Plesk</a> Onyx 17.x</b> &mdash;  сканирование и лечение сайтов прямо в панели хостинга</li>
+               <li style="margin-top: 10px"><b><a href="https://cloudscan.pro/ru/" target=_blank>Облачный антивирус CloudScan.Pro</a> для веб-специалистов</b> &mdash; лечение сайтов в один клик</li>
+               <li style="margin-top: 10px"><b><a href="https://revisium.com/ru/antivirus-server/" target=_blank>Антивирус для сервера</a></b> &mdash; для хостин-компаний, веб-студий и агентств.</li>
+              </ul>  
+	</div>
+ </div> 
+ 
+ <div class="clear"></div>
+ 
+ <div class="title">Критические замечания</div><div class="note_vir">Эти файлы могут быть вредоносными или хакерскими скриптами (5)</div><div class="crit"><div class="flist"><table cellspacing=1 cellpadding=4 border=0 id="table_crit"><thead><tr class="tbgh0"><th width=70%>Путь</th><th>Изменение свойств</th><th>Изменение содержимого</th><th width=90>Размер</th><th width=0 class="hidd">CRC32</th><th width=0 class="hidd"></th><th width=0 class="hidd"></th><th width=0 class="hidd"></th></tr></thead><tbody><tr class="tbg0" o="id_86b9ca36"><td><div class="it"><a class="it">/var/www/www-root/data/www/sadtut.by/wp-includes/user.php</a></div><div class="details"><a href="#" onclick="return hsig('id_86b9ca36')">[x]</a> <span class="line_no">1</span>…email&#039;],&#039;useremail&#039;);wp_cache_delete($user[&#039;user_nicename&#039;],&#039;userslugs&#039;);$userdata=array_merge($user,$userdata);$user_id<span class="marker">&nbsp;</span>=wp_insert_user($userdata);if(! is_wp_error($user_id)){$blog_name=wp_specialchars_decode(get_option(&#039;blogname&#039;),ENT_QUO</div></td><td align=center><div class="ctd">17/09/2018 05:04:26</div></td><td align=center><div class="ctd">17/09/2018 05:04:26</div></td><td align=center><div class="ctd">118.20 Kb</div></td><td class="hidd"><div class="hidd">e40fbbdddac87945ac07ca1b15e704cc1a7f7562</div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd">1537175066</div></td><td class="hidd"><div class="hidd">id_86b9ca36</div></td></tr><tr class="tbg1" o="id_c825ce9d"><td><div class="it"><a class="it">/var/www/www-root/data/www/sadtut.by/wp-includes/formatting.php</a></div><div class="details"><a href="#" onclick="return hsig('id_c825ce9d')">[x]</a> <span class="line_no">1</span>…nceTags&#039;)==1){return force_balance_tags($text);}else{return$text;}}function force_balance_tags($text){$tagstack=array();<span class="marker">&nbsp;</span>$stacksize=0;$tagqueue=&#039;&#039;;$newtext=&#039;&#039;;$single_tags=array(&#039;area&#039;,&#039;base&#039;,&#039;basefont&#039;,&#039;br&#039;,&#039;col&#039;,&#039;command&#039;,&#039;embed&#039;,&#039;frame&#039;,</div></td><td align=center><div class="ctd">17/09/2018 05:04:26</div></td><td align=center><div class="ctd">17/09/2018 05:04:26</div></td><td align=center><div class="ctd">264.84 Kb</div></td><td class="hidd"><div class="hidd">ee3e837bcf9f56967f948d20d5cc6ecb1f92e0a5</div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd">1537175066</div></td><td class="hidd"><div class="hidd">id_c825ce9d</div></td></tr><tr class="tbg0" o="id_464375f4"><td><div class="it"><a class="it">/var/www/www-root/data/www/sadtut.by/wp-admin/includes/dashboard.php</a></div><div class="details"><a href="#" onclick="return hsig('id_464375f4')">[x]</a> <span class="line_no">1</span>…-insecure&#039;;return$classes;}function wp_check_browser_version(){if(empty($_SERVER[&#039;HTTP_USER_AGENT&#039;])) return false;$key=<span class="marker">&nbsp;</span>md5($_SERVER[&#039;HTTP_USER_AGENT&#039;]);if(false===($response=get_site_transient(&#039;browser_&#039;.$key))){include(ABSPATH.WPINC.&#039;/ve</div></td><td align=center><div class="ctd">17/09/2018 05:04:26</div></td><td align=center><div class="ctd">17/09/2018 05:04:26</div></td><td align=center><div class="ctd">62.08 Kb</div></td><td class="hidd"><div class="hidd">29866a951d9e06412d27054c60170822ab2358b3</div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd">1537175066</div></td><td class="hidd"><div class="hidd">id_464375f4</div></td></tr><tr class="tbg1" o="id_86b9ca36"><td><div class="it"><a class="it">/var/www/www-root/data/www/sadtut.by/wp-admin/includes/user.php</a></div><div class="details"><a href="#" onclick="return hsig('id_86b9ca36')">[x]</a> <span class="line_no">1</span>…,$update,&amp;$user));if($errors-&gt;get_error_codes()) return$errors;if($update){$user_id=wp_update_user($user);}else{$user_id<span class="marker">&nbsp;</span>=wp_insert_user($user);$notify=isset($_POST[&#039;send_user_notification&#039;])?&#039;both&#039; : &#039;admin&#039;;do_action(&#039;edit_user_created_us</div></td><td align=center><div class="ctd">17/09/2018 05:04:26</div></td><td align=center><div class="ctd">17/09/2018 05:04:26</div></td><td align=center><div class="ctd">48.88 Kb</div></td><td class="hidd"><div class="hidd">51cbbd26d51caa8504f198a5cfeca0cd4580cf5c</div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd">1537175066</div></td><td class="hidd"><div class="hidd">id_86b9ca36</div></td></tr><tr class="tbg0" o="id_6f049b4e"><td><div class="it"><a class="it">/var/www/www-root/data/www/sadtut.by/wp-admin/includes/file.php</a></div><div class="details"><a href="#" onclick="return hsig('id_6f049b4e')">[x]</a> <span class="line_no">1</span>…n&#039;]. * return array On success,returns an associative array of file attributes.On failure,returns *<span class="marker">&nbsp;</span>$overrides[&#039;upload_error_handler&#039;](&amp;$file,$message) or array(&#039;error&#039;=&gt;$message). */ function_wp_handle_upload(&amp;$</div></td><td align=center><div class="ctd">17/09/2018 05:04:26</div></td><td align=center><div class="ctd">17/09/2018 05:04:26</div></td><td align=center><div class="ctd">80.25 Kb</div></td><td class="hidd"><div class="hidd">6386cb2ebb1e5dbda46804e76ddb1a08e492ef54</div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd">1537175066</div></td><td class="hidd"><div class="hidd">id_6f049b4e</div></td></tr></tbody></table></div><div class=clear style="margin: 20px 0 0 0"></div></div>
+<div class="note_vir">Эти файлы могут быть javascript вирусами (2)</div><div class="crit"><div class="flist"><table cellspacing=1 cellpadding=4 border=0 id="table_vir"><thead><tr class="tbgh0"><th width=70%>Путь</th><th>Изменение свойств</th><th>Изменение содержимого</th><th width=90>Размер</th><th width=0 class="hidd">CRC32</th><th width=0 class="hidd"></th><th width=0 class="hidd"></th><th width=0 class="hidd"></th></tr></thead><tbody><tr class="tbg0" o="id_6f049b4e"><td><div class="it"><a class="it">/var/www/www-root/data/www/sadtut.by/wp-includes/js/tinymce/themes/modern/theme.js</a></div><div class="details"><a href="#" onclick="return hsig('id_6f049b4e')">[x]</a> <span class="line_no">1</span>…global$2.each(&#039;title text name visible disabled active value&#039;.split(&#039; &#039;),function(name$$1){if(name$$1 in settings){self$<span class="marker">&nbsp;</span>$1[name$$1](settings[name$$1]);}});self$$1.on(&#039;click&#039;,function(){if(self$$1.disabled()){return false;}});self$$1.settin</div></td><td align=center><div class="ctd">17/09/2018 05:04:25</div></td><td align=center><div class="ctd">17/09/2018 05:04:25</div></td><td align=center><div class="ctd">304.16 Kb</div></td><td class="hidd"><div class="hidd">0744dca04a339558d5e40ccef83c1e0e15568be8</div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd">1537175065</div></td><td class="hidd"><div class="hidd">id_6f049b4e</div></td></tr><tr class="tbg1" o="id_6f049b4e"><td><div class="it"><a class="it">/var/www/www-root/data/www/sadtut.by/wp-includes/js/tinymce/themes/inlite/theme.js</a></div><div class="details"><a href="#" onclick="return hsig('id_6f049b4e')">[x]</a> <span class="line_no">1</span>…global$4.each(&#039;title text name visible disabled active value&#039;.split(&#039; &#039;),function(name$$1){if(name$$1 in settings){self$<span class="marker">&nbsp;</span>$1[name$$1](settings[name$$1]);}});self$$1.on(&#039;click&#039;,function(){if(self$$1.disabled()){return false;}});self$$1.settin</div></td><td align=center><div class="ctd">17/09/2018 05:04:25</div></td><td align=center><div class="ctd">17/09/2018 05:04:25</div></td><td align=center><div class="ctd">309.91 Kb</div></td><td class="hidd"><div class="hidd">0d2ea1676272563f6460fe9b0cf10c3f2ee509b2</div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd">1537175065</div></td><td class="hidd"><div class="hidd">id_6f049b4e</div></td></tr></tbody></table></div><div class=clear style="margin: 20px 0 0 0"></div></div>
+<div style="margin-top: 20px" class="title">Предупреждения</div><div class="note_warn">Дорвеи, реклама, спам-ссылки, редиректы</div><div class="warn"><div class="flist"><table cellspacing=1 cellpadding=4 border=0 id="table_6243165"><thead><tr class="tbgh0"><th width=70%>Путь</th><th>Изменение свойств</th><th>Изменение содержимого</th><th width=90>Размер</th><th width=0 class="hidd">CRC32</th><th width=0 class="hidd"></th><th width=0 class="hidd"></th><th width=0 class="hidd"></th></tr></thead><tbody><tr class="tbg0" o="id_z5730461"><td><div class="it"><a class="it">/var/www/www-root/data/www/sadtut.by/wp-admin/plugins.php</a></div><div class="details"><span class="line_no">1</span>…admin_url(&#039;plugins.php&#039;));?&gt;&lt;iframe style=&quot;border:0&quot; width=&quot;100%&quot; height=&quot;70px&quot; src=&quot;&lt;?php  echo esc_url($iframe_url);?&gt;&quot;<span class="marker">&nbsp;</span>&gt;&lt;/iframe&gt;&lt;?php }?&gt;&lt;/div&gt;&lt;?php  elseif(isset($_GET[&#039;deleted&#039;])) :$delete_result=get_transient(&#039;plugins_delete_result_&#039;.$u</div></td><td align=center><div class="ctd">17/09/2018 05:04:26</div></td><td align=center><div class="ctd">17/09/2018 05:04:26</div></td><td align=center><div class="ctd">22.48 Kb</div></td><td class="hidd"><div class="hidd">b5081b52129a8c67b3cf49931b3501715e9559a9</div></td><td class="hidd"><div class="hidd">x</div></td><td class="hidd"><div class="hidd">1537175066</div></td><td class="hidd"><div class="hidd">id_z5730461</div></td></tr></tbody></table></div><div class=clear style="margin: 20px 0 0 0"></div></div>
+<div class="note_warn">Версии найденных CMS<br/>WordPress v4.9.8</div>
+ 
+	<div class="footer">
+	   <div class="disclaimer"><span class="vir">[!]</span> Отказ от гарантий: невозможно гарантировать обнаружение всех вредоносных скриптов. Поэтому разработчик сканера не несет ответственности за возможные последствия работы сканера AI-Bolit или неоправданные ожидания пользователей относительно функциональности и возможностей.
+   </div>
+   <div class="thanx">
+      Замечания и предложения по работе скрипта, а также не обнаруженные вредоносные скрипты вы можете присылать на <a href="mailto:ai@revisium.com">ai@revisium.com</a>.<br/>
+      Также будем чрезвычайно благодарны за любые упоминания сканера AI-Bolit на вашем сайте, в блоге, среди друзей, знакомых и клиентов. <br/>Ссылку можно поставить на страницу <a href="https://revisium.com/ai/">https://revisium.com/ai/</a>.<br/> 
+     <p>Получить консультацию или задать вопросы можно по email <a href="mailto:ai@revisium.com">ai@revisium.com</a>.</p> 
+	</div>
+	</div>
+	
+<script language="javascript">
+
+function hsig(id) {
+  var divs = document.getElementsByTagName("tr");
+  for(var i = 0; i < divs.length; i++){
+     
+     if (divs[i].getAttribute('o') == id) {
+        divs[i].innerHTML = '';
+     }
+  }
+
+  return false;
+}
+
+
+$(document).ready(function(){
+    $('#table_crit').dataTable({
+       "aLengthMenu": [[100 , 500, -1], [100, 500, "All"]],
+       "aoColumns": [
+                                     {"iDataSort": 7, "width":"70%"},
+                                     {"iDataSort": 5},
+                                     {"iDataSort": 6},
+                                     {"bSortable": true},
+                                     {"bVisible": false},
+                                     {"bVisible": false},
+                                     {"bVisible": false},
+                                     {"bVisible": false}
+                     ],
+		"paging": true,
+       "iDisplayLength": 500,
+		"oLanguage": {
+			"sLengthMenu": "Отображать по _MENU_ записей",
+			"sZeroRecords": "Ничего не найдено",
+			"sInfo": "Отображается c _START_ по _END_ из _TOTAL_ файлов",
+			"sInfoEmpty": "Нет файлов",
+			"sInfoFiltered": "(всего записей _MAX_)",
+			"sSearch":       "Поиск:",
+			"sUrl":          "",
+			"oPaginate": {
+				"sFirst": "Первая",
+				"sPrevious": "Предыдущая",
+				"sNext": "Следующая",
+				"sLast": "Последняя"
+			},
+			"oAria": {
+				"sSortAscending": ": активировать для сортировки столбца по возрастанию",
+				"sSortDescending": ": активировать для сортировки столбцов по убыванию"	
+			}
+		}
+
+     } );
+
+});
+
+$(document).ready(function(){
+    $('#table_vir').dataTable({
+       "aLengthMenu": [[100 , 500, -1], [100, 500, "All"]],
+		"paging": true,
+       "aoColumns": [
+                                     {"iDataSort": 7, "width":"70%"},
+                                     {"iDataSort": 5},
+                                     {"iDataSort": 6},
+                                     {"bSortable": true},
+                                     {"bVisible": false},
+                                     {"bVisible": false},
+                                     {"bVisible": false},
+                                     {"bVisible": false}
+                     ],
+       "iDisplayLength": 500,
+		"oLanguage": {
+			"sLengthMenu": "Отображать по _MENU_ записей",
+			"sZeroRecords": "Ничего не найдено",
+			"sInfo": "Отображается c _START_ по _END_ из _TOTAL_ файлов",
+			"sInfoEmpty": "Нет файлов",
+			"sInfoFiltered": "(всего записей _MAX_)",
+			"sSearch":       "Поиск:",
+			"sUrl":          "",
+			"oPaginate": {
+				"sFirst": "Первая",
+				"sPrevious": "Предыдущая",
+				"sNext": "Следующая",
+				"sLast": "Последняя"
+			},
+			"oAria": {
+				"sSortAscending":  ": активировать для сортировки столбца по возрастанию",
+				"sSortDescending": ": активировать для сортировки столбцов по убыванию"	
+			}
+		},
+
+     } );
+
+});
+
+if ($('#table_warn0')) {
+    $('#table_warn0').dataTable({
+       "aLengthMenu": [[100 , 500, -1], [100, 500, "All"]],
+		"paging": true,
+       "aoColumns": [
+                                     {"iDataSort": 7, "width":"70%"},
+                                     {"iDataSort": 5},
+                                     {"iDataSort": 6},
+                                     {"bSortable": true},
+                                     {"bVisible": false},
+                                     {"bVisible": false},
+                                     {"bVisible": false},
+                                     {"bVisible": false}
+                     ],
+			         "iDisplayLength": 500,
+			  		"oLanguage": {
+			  			"sLengthMenu": "Отображать по _MENU_ записей",
+			  			"sZeroRecords": "Ничего не найдено",
+			  			"sInfo": "Отображается c _START_ по _END_ из _TOTAL_ файлов",
+			  			"sInfoEmpty": "Нет файлов",
+			  			"sInfoFiltered": "(всего записей _MAX_)",
+			  			"sSearch":       "Поиск:",
+			  			"sUrl":          "",
+			  			"oPaginate": {
+			  				"sFirst": "Первая",
+			  				"sPrevious": "Предыдущая",
+			  				"sNext": "Следующая",
+			  				"sLast": "Последняя"
+			  			},
+			  			"oAria": {
+			  				"sSortAscending":  ": активировать для сортировки столбца по возрастанию",
+			  				"sSortDescending": ": активировать для сортировки столбцов по убыванию"	
+			  			}
+		}
+
+     } );
+}
+
+if ($('#table_warn1')) {
+    $('#table_warn1').dataTable({
+       "aLengthMenu": [[100 , 500, -1], [100, 500, "All"]],
+		"paging": true,
+       "aoColumns": [
+                                     {"iDataSort": 7, "width":"70%"},
+                                     {"iDataSort": 5},
+                                     {"iDataSort": 6},
+                                     {"bSortable": true},
+                                     {"bVisible": false},
+                                     {"bVisible": false},
+                                     {"bVisible": false},
+                                     {"bVisible": false}
+                     ],
+			         "iDisplayLength": 500,
+			  		"oLanguage": {
+			  			"sLengthMenu": "Отображать по _MENU_ записей",
+			  			"sZeroRecords": "Ничего не найдено",
+			  			"sInfo": "Отображается c _START_ по _END_ из _TOTAL_ файлов",
+			  			"sInfoEmpty": "Нет файлов",
+			  			"sInfoFiltered": "(всего записей _MAX_)",
+			  			"sSearch":       "Поиск:",
+			  			"sUrl":          "",
+			  			"oPaginate": {
+			  				"sFirst": "Первая",
+			  				"sPrevious": "Предыдущая",
+			  				"sNext": "Следующая",
+			  				"sLast": "Последняя"
+			  			},
+			  			"oAria": {
+			  				"sSortAscending":  ": активировать для сортировки столбца по возрастанию",
+			  				"sSortDescending": ": активировать для сортировки столбцов по убыванию"	
+			  			}
+		}
+
+     } );
+}
+
+
+</script>
+<!-- [][326668]  -->
+ </body>
+</html>
