@@ -1,6 +1,12 @@
 <p>
 	<a href="{% url 'learning_logs:index' %}">На главную</a>
 	<a href="{% url 'learning_logs:topics' %}">Темы</a>
+	{% if user.is_authenticated %}
+		Привет, {{ user.username }}.
+		<a href="{% url 'users:logout' %}"> Выйти </a>
+	{% else %}
+		<a href="{% url 'users:login' %}"> Авторизация </a>
+	{% endif %}
 </p>
 {% block content %} {% endblock content %}
 

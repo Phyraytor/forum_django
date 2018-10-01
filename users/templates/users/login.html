@@ -1,0 +1,19 @@
+{% extends "learning_logs/base.html" %}
+{% block content %}
+	{% if from.errors %}
+		<p> 
+			Ваше имя и пароль не совпадают. 
+			Пожалуйста, попробуйте ещё раз 
+		</p>
+	{% endif %}
+
+	<form method="post" action="{% url 'users:login' %}">
+		{% csrf_token %}
+		{{ form.as_p }}
+			
+		<button name="submit"> Авторизация </button>
+		<input type="hidden" name="next" 
+			value="{% url 'learning_logs:index' %}" />
+	</form>
+{% endblock content %}
+	
