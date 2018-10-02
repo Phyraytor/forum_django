@@ -1,14 +1,18 @@
 {% extends "learning_logs/base.html" %}
-
+{% block header %}
+  <h1>Темы</h1>
+{% endblock header %}
 {% block content %}
-<p>Темы</p>
-
 <ul>
-	{% for topic in topics %}
-		<li> <a href = "{% url 'learning_logs:topic' topic.id %}" > {{ topic }} </a></li>
-	{% empty %}
-		<li>Нет созданных тем</li>
-	{% endfor %}
+{% for topic in topics %}
+<li>
+    <h3>
+		<a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
+	</h3>
+</li>
+{% empty %}
+<li>Нет созданных тем</li>
+{% endfor %}
 </ul>
-	<a href="{% url 'learning_logs:new_topic' %}">Добавить новую тему:</a>
+  <h3><a href="{% url 'learning_logs:new_topic' %}">Добавить новую тему:</h3>
 {% endblock content %}

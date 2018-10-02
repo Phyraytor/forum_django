@@ -1,6 +1,17 @@
 {% extends "learning_logs/base.html" %}
+{% block header %}
 
+  <div class='jumbotron'>
+    <h1>Добро пожаловать на сайт</h1>        
+  </div>
+{% endblock header %}
 {% block content %}
-	<p> Главная страница</p>
-	<p> Здесь должен быть какой-то текст</p>
+ 
+  <h2>
+    <a href="{% url 'users:register' %}"> Региистрация </a> 
+    необходима для  полноценной работы с сайтом.
+  </h2>
+  <h2>
+    Без авторизации вы можете только просматривать сайт.
+  </h2>
 {% endblock content %}

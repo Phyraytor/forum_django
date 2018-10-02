@@ -10,6 +10,7 @@ def logout_view(request):
 	"""Завершает сеанс работы с приложением."""
 	logout(request)
 	return HttpResponseRedirect( reverse('learning_logs:index') )
+	
 def register(request):
 	""" Create new users"""
 	if request.method != 'POST':
@@ -21,4 +22,10 @@ def register(request):
 
 		if form.is_valid():
 			new_user = form.save()
-			#enter and 
+			#enter and redirect home page
+			authenticated_user = authenticate(username=new_user.username,
+				password=request.POST['password1'])
+			login(request, authenticated_user)
+			return HttpResponseRedirect( reverse('learning_logs:index') )
+	context = {'form': form}
+	return render(request, 'users/register.html', context)
