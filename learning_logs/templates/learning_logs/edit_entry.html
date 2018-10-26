@@ -5,8 +5,26 @@
   </a></p>
   <p>Изменить сообщение:</p>
 
-  <form action="{% url 'learning_logs:edit_entry' entry.id %}" method='post'>
+  <form action="{% url 'learning_logs:edit_entry' entry.id %}" method='post'  enctype="multipart/form-data">
     {% csrf_token %}
+    <div class="b-items__aside-main-body">
+			<div class="b-items__aside-main-body-item">
+
+				{% for key, values  in filters.items %}
+				<label> {{ key }} </label>
+				<div>
+					<select name="{{ key }}" class="m-select">
+						{% for value in values %}	
+							<option value="{{ value }}" selected=""> {{ value }} </option>
+						{% endfor %}
+						<option value="" selected=""> Не выбрано </option>
+					</select>
+					<span class="fa fa-caret-down"></span>
+				</div>
+				{% endfor %}
+
+			</div>
+		</div>
     {{ form.as_p }}
     <button name='submit'> Сохранить изменения</button>
   </form>

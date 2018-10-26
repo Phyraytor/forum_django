@@ -1,13 +1,32 @@
 {% extends "learning_logs/base.html" %}
 {% block content %}
-  <p>
-	<a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
-  </p>
-  <p>Добавить новую сообщение:</p>
+  	<p>
+		<a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
+  	</p>
+  	<p>Введите описание товара:</p>
 
-  <form action="{% url 'learning_logs:new_entry' topic.id %}" method='post'>
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button name='submit'>Добавить сообщение</button>
-  </form>
+  	<form action="{% url 'learning_logs:new_entry' %}" method='post' enctype="multipart/form-data">
+		{% csrf_token %}
+		<div class="b-items__aside-main-body">
+			<div class="b-items__aside-main-body-item">
+
+				{% for key, values  in filters.items %}
+				<label> {{ key }} </label>
+				<div>
+					<select name="{{ key }}" class="m-select">
+						{% for value in values %}	
+							<option value="{{ value }}" selected=""> {{ value }} </option>
+						{% endfor %}
+						<option value="" selected=""> Не выбрано </option>
+					</select>
+					<span class="fa fa-caret-down"></span>
+				</div>
+				{% endfor %}
+
+			</div>
+		</div>
+	    
+	    {{ form.as_p }}
+    	<button name='submit'>Добавить сообщение</button>
+  	</form>
 {% endblock content %}

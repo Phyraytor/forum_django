@@ -2,13 +2,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    {% load staticfiles %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Learning Log</title>
+    <title>Портал</title>
     {% bootstrap_css %}
     {% bootstrap_javascript %}
-  </head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Auto Club</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.png' %} " />
+    <link href="{% static 'css/master.css' %}" rel="stylesheet">
+    <!-- SWITCHER -->
+    <link rel="stylesheet" id="switcher-css" type="text/css" href="{% static 'assets/switcher/css/switcher.css' %}" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{% static 'assets/switcher/css/color1.css' %}" title="color1" media="all" data-default-color="true" />
+    <link rel="alternate stylesheet" type="text/css" href="{% static 'assets/switcher/css/color2.css' %}" title="color2" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{% static 'assets/switcher/css/color3.css' %}" title="color3" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{% static 'assets/switcher/css/color4.css' %}" title="color4" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{% static 'assets/switcher/css/color5.css' %}" title="color5" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{% static 'assets/switcher/css/color6.css' %}" title="color6" media="all" />
 
   </head>
   <body>
@@ -23,7 +37,8 @@
           		</button> 
           		
           		<a class="navbar-brand" href="{% url 'learning_logs:index' %}">
-             		 Главная</a>
+             		 Главная
+              </a>
         	</div> 
         	<div id="navbar" class="navbar-collapse collapse"> 
           		<ul class="nav navbar-nav">
@@ -33,7 +48,7 @@
           		</ul> 
           		<ul class="nav navbar-nav navbar-right">
             	{% if user.is_authenticated %}
-              		<li><a>Привет, {{ user.username }}.</a></li>
+              		<li><a href = "{% url 'learning_logs:account' %}">Привет, {{ user.username }}.</a></li>
               		<li><a href="{% url 'users:logout' %}"> Выйти</a></li>
             	{% else %}
               		<li><a href="{% url 'users:register' %}"> Регистрация </a></li>
@@ -51,5 +66,31 @@
         {% block content %}{% endblock content %}
       </div>
     </div> <!-- /container -->
+    <!--Main-->   
+    <script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/modernizr.custom.js' %}"></script>
+
+    <script src="{% static 'assets/rendro-easy-pie-chart/dist/jquery.easypiechart.min.js' %}"></script>
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easypiechart.min.js' %}"></script>
+    <script src="{% static 'js/classie.js' %}"></script>
+
+    <!--Switcher-->
+    <script src="{% static 'assets/switcher/js/switcher.js' %}"></script>
+    <!--Owl Carousel-->
+    <script src="{% static 'assets/owl-carousel/owl.carousel.min.js' %}"></script>
+    <!--bxSlider-->
+    <script src="{% static 'assets/bxslider/jquery.bxslider.js' %}"></script>
+    <!-- jQuery UI Slider -->
+    <script src="{% static 'assets/slider/jquery.ui-slider.js' %}"></script>
+
+    <!--Theme-->
+    <script src="{% static 'js/jquery.smooth-scroll.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/jquery.placeholder.min.js' %}"></script>
+    <script src="{% static 'js/theme.js' %}"></script>
   </body>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
 </html>
