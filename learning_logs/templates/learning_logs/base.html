@@ -4,69 +4,107 @@
   <head>
     {% load staticfiles %}
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta https-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Портал</title>
     {% bootstrap_css %}
     {% bootstrap_javascript %}
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta https-equiv="content-type" content="text/html;charset=utf-8">
+    <meta https-equiv="content-type" content="text/html;charset=utf-8">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Auto Club</title>
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.png' %} " />
-    <link href="{% static 'css/master.css' %}" rel="stylesheet">
-    <!-- SWITCHER -->
-    <link rel="stylesheet" id="switcher-css" type="text/css" href="{% static 'assets/switcher/css/switcher.css' %}" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="{% static 'assets/switcher/css/color1.css' %}" title="color1" media="all" data-default-color="true" />
-    <link rel="alternate stylesheet" type="text/css" href="{% static 'assets/switcher/css/color2.css' %}" title="color2" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="{% static 'assets/switcher/css/color3.css' %}" title="color3" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="{% static 'assets/switcher/css/color4.css' %}" title="color4" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="{% static 'assets/switcher/css/color5.css' %}" title="color5" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="{% static 'assets/switcher/css/color6.css' %}" title="color6" media="all" />
+    <!-- <link href="{% static 'css/master.css' %}" rel="stylesheet"> -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
-  </head>
-  <body>
+    <!-- SWITCHER -->
+    <!-- <link rel="stylesheet" id="switcher-css" type="text/css" href="{% static 'assets/switcher/css/switcher.css' %}" media="all" /> -->
+    <!-- <link rel="alternate stylesheet" type="text/css" href="{% static 'assets/switcher/css/color1.css' %}" title="color1" media="all" data-default-color="true" /> -->
+    <!-- <link rel="alternate stylesheet" type="text/css" href="{% static 'assets/switcher/css/color2.css' %}" title="color2" media="all" /> -->
+    <!-- <link rel="alternate stylesheet" type="text/css" href="{% static 'assets/switcher/css/color3.css' %}" title="color3" media="all" /> -->
+    <!-- <link rel="alternate stylesheet" type="text/css" href="{% static 'assets/switcher/css/color4.css' %}" title="color4" media="all" /> -->
+    <!-- <link rel="alternate stylesheet" type="text/css" href="{% static 'assets/switcher/css/color5.css' %}" title="color5" media="all" /> -->
+    <!-- <link rel="alternate stylesheet" type="text/css" href="{% static 'assets/switcher/css/color6.css' %}" title="color6" media="all" /> -->
+    
+  
     <!-- Статическая навигационная панель -->
-    <nav class="navbar navbar-default navbar-static-top">
-      	<div class="container">
-        	<div class="navbar-header">
- 
-          		<button type="button" class="navbar-toggle collapsed"
-              		data-toggle="collapse" data-target="#navbar"
-              		aria-expanded="false" aria-controls="navbar">
-          		</button> 
-          		
-          		<a class="navbar-brand" href="{% url 'learning_logs:index' %}">
-             		 Главная
-              </a>
-        	</div> 
-        	<div id="navbar" class="navbar-collapse collapse"> 
-          		<ul class="nav navbar-nav">
-            		<li>
-            			<a href="{% url 'learning_logs:topics' %}">Темы</a>
-            		</li>
-          		</ul> 
-          		<ul class="nav navbar-nav navbar-right">
-            	{% if user.is_authenticated %}
-              		<li><a href = "{% url 'learning_logs:account' %}">Привет, {{ user.username }}.</a></li>
-              		<li><a href="{% url 'users:logout' %}"> Выйти</a></li>
-            	{% else %}
-              		<li><a href="{% url 'users:register' %}"> Регистрация </a></li>
-              		<li><a href="{% url 'users:login' %}"> Войти </a></li>
-            	{% endif %}
-           		</ul>
-        	</div><!--/.nav-collapse -->
-      	</div>
-    </nav>
-    <div class="container">
+    <header>
+      <h1> <span style = "color:red">D</span>ALLAS</h1>
+      <a class="link_catalog" href="{% url 'learning_logs:index' %}">Каталог товаров</a>
+      <a href="/topics/1/">
+        <h3>Авто и транспорт</h3>
+      </a>
+      <form>
+        <input type="text" placeholder="Поиск"/>
+      </form>
+
+      {% if user.is_authenticated %}
+        <div class="sign_in">
+          <img src="{% static 'images/sign_in.jpg' %}"/>
+          <div class="links">
+            <a href="{% url 'learning_logs:account' %}">Привет, {{ user.username }}.</a>
+            <a href="{% url 'users:logout' %}"> Выйти</a>
+          </div>
+        </div>  
+      {% else %}
+        <div class="sign_in">
+          <img src="{% static 'images/sign_in.jpg' %}"/>
+          <div class="links">
+            <a href="{% url 'users:register' %}"> Регистрация </a>
+            <a href="{% url 'users:login' %}"> Войти </a>
+          </div>
+        </div>
+      {% endif %}
+    </header>
+
+
+    <!-- div class="container">
       <div class="page-header">
         {% block header %}{% endblock header %}
       </div>
-      <div>
+      <div> -->
+        <div class="content">
         {% block content %}{% endblock content %}
+        </div>
+  <!--     </div>
+    </div> <!-- --><!--  /container -->
+    <!--Main--> 
+        <footer>
+      <div class="dis_project">
+        <h4>О проекте</h4><span>Значимость этих проблем настолько очевидна, что консультация с широким активом в значительной степени обуславливает создание дальнейших направлений развития. Повседневнаяпрактика показывает, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании модели развития.</span>
       </div>
-    </div> <!-- /container -->
-    <!--Main-->   
+      <div class="stupid">
+        <h4>Последние новости</h4>
+        <div class="stupid-text"><img src="{% static 'images/hourglass.png' %}"/>
+          <p>Повседневная практика показывает,<br> что постоянное информационно</p>
+        </div>
+        <div class="stupid-text"><img src="{% static 'images/hourglass.png' %}"/>
+          <p>Повседневная практика показывает,<br> что постоянное информационно</p>
+        </div>
+        <div class="stupid-text"><img src="{% static 'images/hourglass.png' %}"/>
+          <p>Повседневная практика показывает,<br> что постоянное информационно</p>
+        </div>
+      </div>
+      <div class="stupid">
+        <h4>Правила</h4>
+        <div class="stupid-text"><img src="{% static 'images/hourglass.png' %}"/>
+          <p>Повседневная практика показывает,<br> что постоянное информационно</p>
+        </div>
+        <div class="stupid-text"><img src="{% static 'images/hourglass.png' %}"/>
+          <p>Повседневная практика показывает,<br> что постоянное информационно</p>
+        </div>
+        <div class="stupid-text"><img src="{% static 'images/hourglass.png' %}"/>
+          <p>Повседневная практика показывает,<br> что постоянное информационно</p>
+        </div>
+      </div>
+      <div class="contact">
+        <h4>Контакты</h4><a href="tel:+ 375 (29) 000-00-00 ">+ 375 (29) 000-00-00</a><a href="tel:+ 375 (29) 000-00-00 ">+ 375 (29) 000-00-00</a><a href="pochta@websi">pochta@websi</a>
+      </div>
+    </footer> 
+      <script src="https://code.jquery.com/jquery.min.js"></script>
+      <script src="script.js"></script>
+    
     <script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
     <script src="{% static 'js/jquery-ui.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
@@ -91,6 +129,20 @@
     <script src="{% static 'js/wow.min.js' %}"></script>
     <script src="{% static 'js/jquery.placeholder.min.js' %}"></script>
     <script src="{% static 'js/theme.js' %}"></script>
+  
+    <script>
+      $('.open-get-list').click(function(){
+          $(this).next().children('li:not(.get-active)').slideToggle(100);
+      });
+
+      $('.filters_list li').click(function(){
+        $(this).parent().children('.get-active').removeClass('get-active').show(0);
+        $(this).addClass('get-active');
+        console.log("Помогите, меня положили в подвал, я хочу выбраться отсюда!");
+        $(this).parent().children('.get-input').attr("value", $(this).attr("value") );
+      });
+    </script>
+
   </body>
-<meta http-equiv="content-type" content="text/html;charset=utf-8">
+
 </html>

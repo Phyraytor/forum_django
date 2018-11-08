@@ -1,34 +1,31 @@
 
 {% if elements.paginator.num_pages > 1 %}
-  <div class="b-items__pagination wow zoomInUp" data-wow-delay="0.5s">
-    <div class="b-items__pagination-main">
+  <div class="paginator" data-wow-delay="0.5s">
+   
       {% if elements.has_previous %}
         <a href="{{elements.url}}?page={{elements.previous_page_number}}{{GET}}" class="m-left">
-          <span class="fa fa-angle-left"></span>
+          Назад
         </a>
       {% endif %}
       
       {% for page in elements.paginator.page_range %}
       
         {% if elements.number == page %}
-          <span class="m-active"> 
+          <a class="active_page"> 
             {{ page }} 
-          </span>
+          </a>
         {% else %}
-          <span>
             <a href="{{elements.url}}?page={{page}}{{GET}}"> 
               {{ page }} 
             </a>
-          </span>
         {% endif %}
         
       {% endfor %}
       
       {% if elements.has_next %}
         <a href="{{elements.url}}?page={{elements.next_page_number}}{{GET}}" class="m-right">
-          <span class="fa fa-angle-right"></span>
+          Вперёд
         </a> 
       {% endif %}  
-    </div>
   </div>
 {% endif %}

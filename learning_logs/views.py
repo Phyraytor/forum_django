@@ -17,8 +17,8 @@ COUNT_MESSAGE_PAGE = 5
 
 @register.filter 
 def get_item(dictionary, key):
-	""" Это нужно для перевода""" 
-    return dictionary.get(key)
+	""" Это нужно для перевода """
+	return dictionary.get(key)
 
 # Create your views here.
 
@@ -95,7 +95,7 @@ def topic(request, topic_id):
 		'filters': filters,
 		'GET': GET,
 		'translate_filter': translate_filter,
-		'elements': products,  
+		'elements': products, 
 	}
 	return render(request, 'learning_logs/topic.html', context)
 
